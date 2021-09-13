@@ -20,6 +20,7 @@ const showProducts = (products) => {
         <div class="card-body">
           <h3 class="card-title">${product.title}</h3>
           <p class="card-text">Category: ${product.category}</p>
+          <h6>Totat Rating : ${product.rating.count} Average : <span class="text-danger"> ${product.rating.rate}</span></h6>
           <h2>Price: $ ${product.price}</h2>
         </div>
         <div class="card-footer">
