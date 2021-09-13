@@ -11,8 +11,8 @@ const showProducts = (products) => {
   for (const product of allProducts) {
     const image = product.image;
     const div = document.createElement("div");
-    div.classList.add("product");
-    div.innerHTML = `<div class="single-product">
+    div.classList.add("product", "h-100", "mx-2", "my-2");
+    div.innerHTML = `<div class="single-product bg-color">
       <div>
     <img class="product-image" src=${image}></img>
       </div>
