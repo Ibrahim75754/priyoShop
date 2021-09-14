@@ -11,11 +11,11 @@ const showProducts = (products) => {
   for (const product of allProducts) {
     const image = product.image;
     const div = document.createElement("div");
-    div.classList.add("col");
+    div.classList.add("col", "single-product");
     div.innerHTML = `
       <div class="card h-100">
         <div class="d-flex justify-content-center">
-          <img class="w-50" src=${image}>
+          <img class="product-image" src=${image}>
         </div>
         <div class="card-body">
           <h3 class="card-title">${product.title}</h3>
@@ -25,7 +25,7 @@ const showProducts = (products) => {
         </div>
         <div class="card-footer">
           <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn          btn-secondary me-5">add to cart</button>
-          <button id="details-btn" class="btn btn-warning">Details</button></div>
+          <button id="details-btn" class="btn btn-info text-white">Details</button></div>
         </div>
       </div>
     `;
@@ -58,7 +58,7 @@ const updatePrice = (id, value) => {
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = Math.round(value);
+  document.getElementById(id).innerText = value.toFixed(2);
 };
 
 // update delivery charge and total Tax
